@@ -8,6 +8,8 @@ connectDB()
 const app = express()
 app.use(express.json())
 
+app.use(express.static("public"))
+
 // CORS configuration via env (comma-separated origins allowed)
 const allowedOrigins = (process.env.CORS_ORIGIN || "*")
   .split(",")
