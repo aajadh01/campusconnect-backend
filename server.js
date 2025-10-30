@@ -6,9 +6,8 @@ const connectDB = require("./src/config/db") // 👈 import the DB connection fu
 // connect to MongoDB immediately
 connectDB()
 const app = express()
+app.use(express.static('public'));
 app.use(express.json())
-
-app.use(express.static("public"))
 
 // CORS configuration via env (comma-separated origins allowed)
 const allowedOrigins = (process.env.CORS_ORIGIN || "*")
